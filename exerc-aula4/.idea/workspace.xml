@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="973056a5-63f6-48d0-816e-985ce457f1d6" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1jwC4GoGdrJWPKgqWj25uRKVTmF" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../exerc-aula04" />
+  </component>
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="ResultadoCalc" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ResultadoCalc" />
+      <module name="abstrata" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ResultadoCalc" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="973056a5-63f6-48d0-816e-985ce457f1d6" name="Default Changelist" comment="" />
+      <created>1604705573176</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604705573176</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="739" y="75" key="#com.intellij.ide.util.MemberChooser" timestamp="1604705976172">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="739" y="75" key="#com.intellij.ide.util.MemberChooser/0.0.1366.738/-262.-1080.1920.1050@0.0.1366.738" timestamp="1604705976172" />
+    <state x="638" y="131" key="FileChooserDialogImpl" timestamp="1604707561223">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="638" y="131" key="FileChooserDialogImpl/0.0.1366.738/-262.-1080.1920.1050@0.0.1366.738" timestamp="1604707561223" />
+    <state x="131" y="0" key="new project wizard" timestamp="1604707398744">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="131" y="0" key="new project wizard/0.0.1366.738/-262.-1080.1920.1050@0.0.1366.738" timestamp="1604707398744" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/abstrata/src/Subtracao.java</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

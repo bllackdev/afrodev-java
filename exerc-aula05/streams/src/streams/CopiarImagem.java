@@ -5,6 +5,10 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+/**
+ * Exercicio : 'Using Byte Streams'
+ * site: https://docs.oracle.com/javase/tutorial/essential/io/bytestreams.html
+ */
 public class CopiarImagem {
     public static void main(String[] args) throws IOException {
 

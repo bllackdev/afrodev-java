@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/exerc-aula04/abstrata/abstrata.iml" filepath="$PROJECT_DIR$/exerc-aula04/abstrata/abstrata.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/afrodev-java.iml" filepath="$PROJECT_DIR$/.idea/afrodev-java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exerc-aula03/casting/casting.iml" filepath="$PROJECT_DIR$/exerc-aula03/casting/casting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exerc-aula02/conta-corrente/conta-corrente.iml" filepath="$PROJECT_DIR$/exerc-aula02/conta-corrente/conta-corrente.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exerc-aula05/excecoes/excecoes.iml" filepath="$PROJECT_DIR$/exerc-aula05/excecoes/excecoes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exerc-aula01/exerc-aula01.iml" filepath="$PROJECT_DIR$/exerc-aula01/exerc-aula01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exerc-aula02/exerc-aula02.iml" filepath="$PROJECT_DIR$/exerc-aula02/exerc-aula02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exerc-aula07/exerc-aula07.iml" filepath="$PROJECT_DIR$/exerc-aula07/exerc-aula07.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exerc-aula10/exerc-aula10.iml" filepath="$PROJECT_DIR$/exerc-aula10/exerc-aula10.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exerc-aula03/final/final.iml" filepath="$PROJECT_DIR$/exerc-aula03/final/final.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exerc-aula03/instanceof/instanceof.iml" filepath="$PROJECT_DIR$/exerc-aula03/instanceof/instanceof.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exerc-aula04/interface/interface.iml" filepath="$PROJECT_DIR$/exerc-aula04/interface/interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exerc-aula05/streams/streams.iml" filepath="$PROJECT_DIR$/exerc-aula05/streams/streams.iml" />
+    </modules>
+  </component>
+</project>

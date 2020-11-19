@@ -29,7 +29,7 @@ public class ExemploSpringApplication {
 
 	@GetMapping("/subtracao")
 	public String subtracao(@RequestParam(value = "valor", defaultValue = "0") Double valor,
-					   @RequestParam(value = "valor2", defaultValue = "0") Double valor2) {
+					   	@RequestParam(value = "valor2", defaultValue = "0") Double valor2) {
 		return String.format("Soma dos numeros: %s + %s = %s", valor, valor2, (valor - valor2));
 	}
 

@@ -5,9 +5,12 @@ import javax.persistence.*;
 @Entity
 public class Address {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name="id_address")
-    private Integer id_address;
+    @Column(name="idAddress")
+    private Integer idAddress;
+
+    @JoinColumn
+    @Column(name = "client_cpf")
+    private String cpfClient;
 
     @Column(name = "street")
     private String street;
@@ -18,16 +21,12 @@ public class Address {
     @Column(name = "state")
     private String state;
 
-    @JoinColumn
-    @Column(name = "cpf_client")
-    private Integer cpf_client;
-
-    public Integer getId_address() {
-        return id_address;
+    public Integer getIdAddress() {
+        return idAddress;
     }
 
-    public void setId_address(Integer id_address) {
-        this.id_address = id_address;
+    public void setIdAddress(Integer idAddress) {
+        this.idAddress = idAddress;
     }
 
     public String getStreet() {
@@ -54,11 +53,11 @@ public class Address {
         this.state = state;
     }
 
-    public Integer getCpf_client() {
-        return cpf_client;
+    public String getCpfClient() {
+        return cpfClient;
     }
 
-    public void setCpf_client(Integer cpf_client) {
-        this.cpf_client = cpf_client;
+    public void setCpfClient(String cpf_client) {
+        this.cpfClient = cpfClient;
     }
 }

@@ -1,15 +1,20 @@
 package com.demo.backend.model;
 
+import org.springframework.boot.autoconfigure.r2dbc.ConnectionFactoryBuilder;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 
 @Entity
 public class Client {
 
     @Id
     @Column(name="cpf")
-    private Integer cpf;
+    private String cpf;
 
     @Column(name="name_first")
     private String firstName;
@@ -17,11 +22,11 @@ public class Client {
     @Column(name="name_last")
     private String lastName;
 
-    public Integer getCpf() {
+    public String getCpf() {
         return cpf;
     }
 
-    public void setCpf(Integer cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 
@@ -40,4 +45,6 @@ public class Client {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+    
+
 }

@@ -5,49 +5,60 @@ import javax.persistence.*;
 @Entity
 public class Bill {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "bill")
-    private Integer bill;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_bill")
+    private Integer idBill;
 
     @JoinColumn
     @Column(name = "cpf_client")
-    private Integer cpf_client;
+    private String cpfClient;
 
     @JoinColumn
-    @Column(name = "id_address")
-    private Integer id_address;
+    @Column(name = "address_fk")
+    private Integer idAddress;
 
     @Column(name = "month")
     private String month;
 
     @Column(name = "reading_old")
-    private Double reading_old;
+    private Double readingOld;
 
     @Column(name = "reading_new")
-    private Double reading_new;
+    private Double readingNew;
+
+    @Column(name = "consume")
+    private Double consume;
+
+    public Double getConsume() {
+        return consume;
+    }
+
+    public void setConsume(Double consume) {
+        this.consume = this.readingNew - this.readingOld;
+    }
 
     public Integer getBill() {
-        return bill;
+        return idBill;
     }
 
     public void setBill(Integer bill) {
-        this.bill = bill;
+        this.idBill = bill;
     }
 
-    public Integer getCpf_client() {
-        return cpf_client;
+    public String getCpfClient() {
+        return cpfClient;
     }
 
-    public void setCpf_client(Integer cpf_client) {
-        this.cpf_client = cpf_client;
+    public void setCpfClient(String cpfClient) {
+        this.cpfClient = cpfClient;
     }
 
-    public Integer getId_address() {
-        return id_address;
+    public Integer getIdAddress() {
+        return idAddress;
     }
 
-    public void setId_address(Integer id_address) {
-        this.id_address = id_address;
+    public void setIdAddress(Integer idAddress) {
+        this.idAddress = idAddress;
     }
 
     public String getMonth() {
@@ -58,19 +69,22 @@ public class Bill {
         this.month = month;
     }
 
-    public Double getReading_old() {
-        return reading_old;
+    public Double getReadingOld(Double readingOld) {
+        return this.readingOld;
     }
 
-    public void setReading_old(Double reading_old) {
-        this.reading_old = reading_old;
+    public void setReadingOld(Double readingOld) {
+
+        this.readingOld = readingOld;
     }
 
-    public Double getReading_new() {
-        return reading_new;
+    public Double getReadingNew() {
+        return readingNew;
     }
 
-    public void setReading_new(Double reading_new) {
-        this.reading_new = reading_new;
+    public void setReadingNew(Double readingNew) {
+        this.readingNew = readingNew;
     }
+
+
 }

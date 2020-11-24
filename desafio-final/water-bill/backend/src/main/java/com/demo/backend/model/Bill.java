@@ -11,11 +11,11 @@ public class Bill {
 
     @JoinColumn
     @Column(name = "cpf_client")
-    private String cpfClient;
+    private Integer cpfClient;
 
-    @JoinColumn
-    @Column(name = "address_fk")
-    private Integer idAddress;
+//    @JoinColumn
+//    @Column(name = "address_fk")
+//    private Integer idAddress;
 
     @Column(name = "month")
     private String month;
@@ -29,37 +29,39 @@ public class Bill {
     @Column(name = "consume")
     private Double consume;
 
-    public Double getConsume() {
-        return consume;
+    public Bill() {}
+
+    public Bill(Integer cpfClient, String month, Double readingOld, Double readingNew, Double consume) {
+        this.cpfClient = cpfClient;
+        this.month = month;
+        this.readingOld = readingOld;
+        this.readingNew = readingNew;
+        this.consume = consume;
     }
 
-    public void setConsume(Double consume) {
-        this.consume = this.readingNew - this.readingOld;
-    }
-
-    public Integer getBill() {
+    public Integer getIdBill() {
         return idBill;
     }
 
-    public void setBill(Integer bill) {
-        this.idBill = bill;
+    public void setIdBill(Integer idBill) {
+        this.idBill = idBill;
     }
 
-    public String getCpfClient() {
+    public Integer getCpfClient() {
         return cpfClient;
     }
 
-    public void setCpfClient(String cpfClient) {
+    public void setCpfClient(Integer cpfClient) {
         this.cpfClient = cpfClient;
     }
 
-    public Integer getIdAddress() {
-        return idAddress;
-    }
-
-    public void setIdAddress(Integer idAddress) {
-        this.idAddress = idAddress;
-    }
+//    public Integer getIdAddress() {
+//        return idAddress;
+//    }
+//
+//    public void setIdAddress(Integer idAddress) {
+//        this.idAddress = idAddress;
+//    }
 
     public String getMonth() {
         return month;
@@ -74,7 +76,6 @@ public class Bill {
     }
 
     public void setReadingOld(Double readingOld) {
-
         this.readingOld = readingOld;
     }
 
@@ -86,5 +87,23 @@ public class Bill {
         this.readingNew = readingNew;
     }
 
+    public Double getConsume() {
+        return consume;
+    }
 
+    public void setConsume(Double consume) {
+        this.consume = consume;
+    }
+
+    @Override
+    public String toString() {
+        return "Bill{" +
+                "idBill=" + idBill +
+                ", cpfClient='" + cpfClient + '\'' +
+                ", month='" + month + '\'' +
+                ", readingOld=" + readingOld +
+                ", readingNew=" + readingNew +
+                ", consume=" + consume +
+                '}';
+    }
 }

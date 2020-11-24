@@ -4,7 +4,7 @@ package com.demo.backend.controller;
  * @Author Raphael.Renato
  */
 
-import com.demo.backend.model.Address;
+//import com.demo.backend.model.Address;
 import com.demo.backend.model.Bill;
 import com.demo.backend.model.Client;
 import com.demo.backend.repository.AddressRepository;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Optional;
 
 @Controller
-@RequestMapping(path = "/index")
+@RequestMapping(path = "/api")
 public class MainController {
 
     @Autowired
@@ -36,7 +36,7 @@ public class MainController {
     }
 
     @PostMapping(path = "/bill/add")
-    public @ResponseBody String addNewBill (@RequestParam String cpfClient,
+    public @ResponseBody String addNewBill (@RequestParam Integer cpfClient,
                                             @RequestParam String month,
                                             @RequestParam Double readingOld,
                                             @RequestParam Double  readingNew) {
@@ -74,7 +74,7 @@ public class MainController {
     }
 
     @PostMapping(path = "/client/add")
-    public @ResponseBody String addNewClient (@RequestParam String cpfClient,
+    public @ResponseBody String addNewClient (@RequestParam Integer cpfClient,
                                               @RequestParam String firstName,@RequestParam String lastName) {
         Client c = new Client();
         c.setCpf(cpfClient);
@@ -104,43 +104,43 @@ public class MainController {
     }
 
     // Métodos Address
-    @GetMapping(path = "/address/all")
-    public @ResponseBody Iterable<Address> getAllAddress() {
-        return addressRepository.findAll();
-    }
-
-    @PostMapping(path = "/address/add")
-    public @ResponseBody String addNewAddress (@RequestParam Integer idAddress,
-                                               @RequestParam String street, @RequestParam String city,
-                                               @RequestParam String state,  @RequestParam String cpfClient) {
-        Address a = new Address();
-        a.setIdAddress(idAddress);
-        a.setStreet(street);
-        a.setCity(city);
-        a.setState(state);
-        a.setCpfClient(cpfClient);
-        addressRepository.save(a);
-        return "Saved!!!";
-    }
-
-    @PutMapping("/address/update")
-    public @ResponseBody String updateAddress (@RequestParam Integer idAddress,
-                                               @RequestParam String street, @RequestParam String city,
-                                               @RequestParam String state) {
-        Optional<Address> foundAddress = addressRepository.findById(idAddress);
-        if (!foundAddress.isPresent())
-            throw new IllegalArgumentException();
-        Address address = foundAddress.get();
-        address.setStreet(street);
-        address.setCity(city);
-        address.setState(state);
-        addressRepository.save(address);
-        return "Updated!!!";
-    }
-
-    @DeleteMapping(path = "/address/remove")
-    public @ResponseBody String removeOneAddress(@RequestParam Integer idAddress) {
-        addressRepository.deleteById(idAddress);
-        return "Deleted!!!";
-    }
+//    @GetMapping(path = "/address/all")
+//    public @ResponseBody Iterable<Address> getAllAddress() {
+//        return addressRepository.findAll();
+//    }
+//
+//    @PostMapping(path = "/address/add")
+//    public @ResponseBody String addNewAddress (@RequestParam Integer idAddress,
+//                                               @RequestParam String street, @RequestParam String city,
+//                                               @RequestParam String state,  @RequestParam String cpfClient) {
+//        Address a = new Address();
+//        a.setIdAddress(idAddress);
+//        a.setStreet(street);
+//        a.setCity(city);
+//        a.setState(state);
+//        a.setCpfClient(cpfClient);
+//        addressRepository.save(a);
+//        return "Saved!!!";
+//    }
+//
+//    @PutMapping("/address/update")
+//    public @ResponseBody String updateAddress (@RequestParam Integer idAddress,
+//                                               @RequestParam String street, @RequestParam String city,
+//                                               @RequestParam String state) {
+//        Optional<Address> foundAddress = addressRepository.findById(idAddress);
+//        if (!foundAddress.isPresent())
+//            throw new IllegalArgumentException();
+//        Address address = foundAddress.get();
+//        address.setStreet(street);
+//        address.setCity(city);
+//        address.setState(state);
+//        addressRepository.save(address);
+//        return "Updated!!!";
+//    }
+//
+//    @DeleteMapping(path = "/address/remove")
+//    public @ResponseBody String removeOneAddress(@RequestParam Integer idAddress) {
+//        addressRepository.deleteById(idAddress);
+//        return "Deleted!!!";
+//    }
 }

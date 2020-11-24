@@ -1,7 +1,7 @@
 package com.demo.backend.repository;
 
 import com.demo.backend.model.Bill;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface BillRepository extends CrudRepository<Bill, Integer> {
+public interface BillRepository extends JpaRepository<Bill, Integer> {
 }

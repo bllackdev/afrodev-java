@@ -1,8 +1,9 @@
-package com.demo.backend.model;
+package com.waterbill.backend.model;
 
 import javax.persistence.*;
 
 @Entity
+@Table(name = "bill")
 public class Bill {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -11,14 +12,7 @@ public class Bill {
 
     @JoinColumn
     @Column(name = "cpf_client")
-    private Integer cpfClient;
-
-//    @JoinColumn
-//    @Column(name = "address_fk")
-//    private Integer idAddress;
-
-    @Column(name = "month")
-    private String month;
+    private String cpfClient;
 
     @Column(name = "reading_old")
     private Double readingOld;
@@ -29,14 +23,17 @@ public class Bill {
     @Column(name = "consume")
     private Double consume;
 
+    @Column(name = "month")
+    private String month;
+
     public Bill() {}
 
-    public Bill(Integer cpfClient, String month, Double readingOld, Double readingNew, Double consume) {
+    public Bill(String cpfClient, Double readingOld, Double readingNew, Double consume, String month) {
         this.cpfClient = cpfClient;
-        this.month = month;
         this.readingOld = readingOld;
         this.readingNew = readingNew;
         this.consume = consume;
+        this.month = month;
     }
 
     public Integer getIdBill() {
@@ -47,32 +44,16 @@ public class Bill {
         this.idBill = idBill;
     }
 
-    public Integer getCpfClient() {
+    public String getCpfClient() {
         return cpfClient;
     }
 
-    public void setCpfClient(Integer cpfClient) {
+    public void setCpfClient(String cpfClient) {
         this.cpfClient = cpfClient;
     }
 
-//    public Integer getIdAddress() {
-//        return idAddress;
-//    }
-//
-//    public void setIdAddress(Integer idAddress) {
-//        this.idAddress = idAddress;
-//    }
-
-    public String getMonth() {
-        return month;
-    }
-
-    public void setMonth(String month) {
-        this.month = month;
-    }
-
-    public Double getReadingOld(Double readingOld) {
-        return this.readingOld;
+    public Double getReadingOld() {
+        return readingOld;
     }
 
     public void setReadingOld(Double readingOld) {
@@ -91,8 +72,18 @@ public class Bill {
         return consume;
     }
 
-    public void setConsume(Double consume) {
-        this.consume = consume;
+    public Double setConsume(Double consume) {
+
+        this.consume = readingNew - readingNew;
+        return consume;
+    }
+
+    public String getMonth() {
+        return month;
+    }
+
+    public void setMonth(String month) {
+        this.month = month;
     }
 
     @Override
@@ -100,10 +91,10 @@ public class Bill {
         return "Bill{" +
                 "idBill=" + idBill +
                 ", cpfClient='" + cpfClient + '\'' +
-                ", month='" + month + '\'' +
                 ", readingOld=" + readingOld +
                 ", readingNew=" + readingNew +
                 ", consume=" + consume +
+                ", month='" + month + '\'' +
                 '}';
     }
 }

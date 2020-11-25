@@ -1,6 +1,6 @@
-package com.demo.backend.repository;
+package com.waterbill.backend.repository;
 
-import com.demo.backend.model.Bill;
+import com.waterbill.backend.model.Bill;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface BillRepository extends JpaRepository<Bill, Integer> {

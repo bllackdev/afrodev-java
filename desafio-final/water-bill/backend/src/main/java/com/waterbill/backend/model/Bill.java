@@ -72,9 +72,9 @@ public class Bill {
         return consume;
     }
 
-    public Double setConsume(Double consume) {
+    public Double setConsume(Double readingOld, Double readingNew) {
 
-        this.consume = readingNew - readingNew;
+        this.consume = readingNew - readingOld;
         return consume;
     }
 

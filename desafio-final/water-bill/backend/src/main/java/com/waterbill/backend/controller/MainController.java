@@ -50,6 +50,20 @@ public class MainController {
         }
     }
 
+    @PutMapping(path = "/client/update/{idClient}")
+    public ResponseEntity<Client> updateClient(@PathVariable("idClient") Integer idClient, @RequestBody Client client) {
+        Optional<Client> clientData = clientRepository.findById(idClient);
+        if (clientData.isPresent()) {
+            Client _client = clientData.get();
+            _client.setCpf(client.getCpf());
+            _client.setFirstName(client.getFirstName());
+            _client.setLastName(client.getLastName());
+            return new ResponseEntity<>(clientRepository.save(_client), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
     // Metódos Bill
     @GetMapping(path = "/bill/all")
     public  List<Bill> listBill() {
@@ -75,6 +89,19 @@ public class MainController {
             return new ResponseEntity<>(_bill, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @PutMapping(path = "/bill/update/{idBill}")
+    public ResponseEntity<Bill> updateBill(@PathVariable("idBill") Integer idBill, @RequestBody Bill bill) {
+        Optional<Bill> billData = billRepository.findById(idBill);
+        if (billData.isPresent()) {
+            Bill _bill = billData.get();
+            _bill.setReadingNew(bill.getReadingNew());
+            _bill.setMonth(bill.getMonth());
+            return new ResponseEntity<>(billRepository.save(_bill), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 }

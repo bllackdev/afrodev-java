@@ -4,6 +4,7 @@ import com.waterbill.backend.model.Bill;
 import com.waterbill.backend.model.Client;
 import com.waterbill.backend.repository.BillRepository;
 import com.waterbill.backend.repository.ClientRepository;
+import org.hibernate.jdbc.Expectation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -64,6 +65,27 @@ public class MainController {
         }
     }
 
+    @DeleteMapping(path = "/client/remove/{idClient}")
+    public ResponseEntity<HttpStatus> deleteClient(@PathVariable("idClient") Integer idClient) {
+        try {
+            clientRepository.deleteById(idClient);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @DeleteMapping(path = "/client/remove/all")
+    public ResponseEntity<HttpStatus> deleteAllClient() {
+        try {
+            clientRepository.deleteAll();
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+
     // Metódos Bill
     @GetMapping(path = "/bill/all")
     public  List<Bill> listBill() {
@@ -102,6 +124,26 @@ public class MainController {
             return new ResponseEntity<>(billRepository.save(_bill), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @DeleteMapping(path = "/bill/remove/{idBill}")
+    public ResponseEntity<HttpStatus> deleteBill(@PathVariable("idBill") Integer idBill) {
+        try {
+            billRepository.deleteById(idBill);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @DeleteMapping(path = "/bill/remove/all")
+    public ResponseEntity<HttpStatus> deleteAllBill() {
+        try {
+            billRepository.deleteAll();
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        } catch (Exception e){
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }

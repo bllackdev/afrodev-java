@@ -73,6 +73,8 @@ public class Bill {
     }
 
     public void setConsume(Double readingNew, Double readingOld) {
+        // Implementando o calculo do consumo
+        // OBS: Ainda não consegui encaixar essa funcionalidade no CRUD
         this.consume = readingNew - readingOld;
     }
 

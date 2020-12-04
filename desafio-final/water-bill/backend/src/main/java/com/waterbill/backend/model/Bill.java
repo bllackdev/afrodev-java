@@ -72,10 +72,8 @@ public class Bill {
         return consume;
     }
 
-    public Double setConsume(Double readingOld, Double readingNew) {
-
+    public void setConsume(Double readingNew, Double readingOld) {
         this.consume = readingNew - readingOld;
-        return consume;
     }
 
     public String getMonth() {

@@ -4,20 +4,21 @@ import com.waterbill.backend.model.Bill;
 import com.waterbill.backend.model.Client;
 import com.waterbill.backend.repository.BillRepository;
 import com.waterbill.backend.repository.ClientRepository;
-import org.hibernate.jdbc.Expectation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/api")
 public class MainController {
-
+    @GetMapping
+    public String getStart() {
+        return "Spring Start!!!";
+    }
     @Autowired
     private ClientRepository clientRepository;
 
@@ -108,6 +109,7 @@ public class MainController {
             Bill _bill = billRepository
                     .save(new Bill(bill.getCpfClient(), bill.getReadingOld(), bill.getReadingNew(),
                             bill.getConsume(), bill.getMonth()));
+            _bill.setConsume(bill.getReadingNew() , bill.getReadingOld());
             return new ResponseEntity<>(_bill, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
@@ -121,6 +123,7 @@ public class MainController {
             Bill _bill = billData.get();
             _bill.setReadingNew(bill.getReadingNew());
             _bill.setMonth(bill.getMonth());
+            //_bill.setConsume(bill.getReadingNew() , bill.getReadingOld());
             return new ResponseEntity<>(billRepository.save(_bill), HttpStatus.OK);
         } else {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
